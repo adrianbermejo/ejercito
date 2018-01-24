@@ -28,4 +28,16 @@ public class Ejercito
         listaDeTanques.add(tanque);
         
     }
+    
+    /**
+     * Mostrar tanques numerados
+     */
+    public void mostrarTanquesNumerados()
+    {
+        int posicionTanquesActual = 0;
+        while (posicionTanquesActual < listaDeTanques.size()) {
+            System.out.println((posicionTanquesActual+1) + ". " + listaDeTanques.get(posicionTanquesActual).getDatosTanque());
+            posicionTanquesActual++;
+        }
+    }
 }
