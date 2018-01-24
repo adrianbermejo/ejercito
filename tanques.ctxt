@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=tanques
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ tanques\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=modelo\ pais\ peso
+comment1.target=tanques(java.lang.String,\ java.lang.String,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ tanques\r\n
+comment2.params=
+comment2.target=java.lang.String\ getModelo()
+comment2.text=\r\n\ Devuelve\ el\ modelo\ del\ tanque.\r\n
+comment3.params=nuevoModelo
+comment3.target=void\ setModelo(java.lang.String)
+comment3.text=\r\n\ cambia\ el\ modelo\ del\ tanque\r\n
+comment4.params=
+comment4.target=java.lang.String\ getPais()
+comment4.text=\r\n\ Devuelve\ el\ pais\ del\ tanque.\r\n
+comment5.params=nuevoPais
+comment5.target=void\ setPais(java.lang.String)
+comment5.text=\r\n\ cambia\ el\ pais\ del\ tanque\r\n
+comment6.params=
+comment6.target=int\ getPeso()
+comment6.text=\r\n\ Devuelve\ el\ peso\ del\ tanque\ en\ toneladas.\r\n
+comment7.params=nuevoPeso
+comment7.target=void\ setPais(int)
+comment7.text=\r\n\ cambia\ el\ peso\ del\ tanque\r\n
+numComments=8
