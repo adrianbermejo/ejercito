@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Ejercito
 {
     private ArrayList<Tanques> listaDeTanques;
+    private ArrayList<Tanques> tanques2;
     private int numSerie;
     /**
      * Constructor for objects of class ejercito
@@ -15,9 +16,10 @@ public class Ejercito
     public Ejercito()
     {
         listaDeTanques = new ArrayList<Tanques>();
+
         numSerie = 0;
     }
-    
+
     /**
      * Añade un tanque
      */
@@ -26,9 +28,9 @@ public class Ejercito
         numSerie++;
         Tanques  tanque = new Tanques(modelo,pais,peso,numSerie);
         listaDeTanques.add(tanque);
-        
+
     }
-    
+
     /**
      * Mostrar tanques numerados
      */
@@ -40,4 +42,45 @@ public class Ejercito
             posicionTanquesActual++;
         }
     }
+
+    /**
+     *
+     */
+    public void imprimirTanqueMayorPeso(){
+        tanques2 = listaDeTanques;
+        while(tanques2.size() != 0){
+            if(listaDeTanques.size()>0) {
+                Tanques tanquesMayorPeso = tanques2.get(0);
+                for(Tanques TanquesActual : tanques2) {
+                    if (TanquesActual.getPeso() <= tanquesMayorPeso.getPeso()){
+                        tanquesMayorPeso = TanquesActual;
+                    }
+                }
+                System.out.println(tanquesMayorPeso.getDatosTanque());
+                tanques2.remove(tanquesMayorPeso);
+            }
+        }
+
+    }
+
+    /**
+     * Cambia el peso del tanque con numero de chais dado.
+     * Si el usuario indica una posicion no válida, el metodo no
+     * hace nada.
+     */
+    public void cambiarpeso( int numSerie,int nuevoPeso)
+    {
+        if(numSerie>=0 && listaDeTanques.size()>0) {
+            Tanques serie = listaDeTanques.get(0);
+            for(Tanques TanquesActual : listaDeTanques) {
+                    if (TanquesActual.getNumSerie() == numSerie){
+                        serie = TanquesActual;
+                        serie.setPeso(nuevoPeso);
+                    }
+            
+            
+        }
+    }
+    
+    } 
 }
