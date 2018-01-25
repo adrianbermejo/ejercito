@@ -73,14 +73,31 @@ public class Ejercito
         if(numSerie>=0 && listaDeTanques.size()>0) {
             Tanques serie = listaDeTanques.get(0);
             for(Tanques TanquesActual : listaDeTanques) {
-                    if (TanquesActual.getNumSerie() == numSerie){
-                        serie = TanquesActual;
-                        serie.setPeso(nuevoPeso);
-                    }
-            
-            
+                if (TanquesActual.getNumSerie() == numSerie){
+                    serie = TanquesActual;
+                    serie.setPeso(nuevoPeso);
+                }
+
+            }
         }
-    }
-    
+
+    } 
+
+    /**
+     * eliminatodos los tanques que su peso sea menor al numero indicado
+     */
+    public void eiminar( int peso)
+    {
+        if(peso>=0 && listaDeTanques.size()>0) {
+            Tanques pesoMenor = listaDeTanques.get(0);
+            for(Tanques tanquesActual : listaDeTanques) {
+                if (tanquesActual.getPeso() < peso){
+                    pesoMenor = tanquesActual;
+                    listaDeTanques.remove(pesoMenor);
+                }
+
+            }
+        }
+
     } 
 }
