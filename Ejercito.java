@@ -47,13 +47,13 @@ public class Ejercito
      *
      */
     public void imprimirTanqueMayorPeso(){
-        tanques2 = listaDeTanques;
+        tanques2 = (ArrayList<Tanques>) listaDeTanques.clone();
         while(tanques2.size() != 0){
-            if(listaDeTanques.size()>0) {
+            if(tanques2.size()>0) {
                 Tanques tanquesMayorPeso = tanques2.get(0);
-                for(Tanques TanquesActual : tanques2) {
-                    if (TanquesActual.getPeso() <= tanquesMayorPeso.getPeso()){
-                        tanquesMayorPeso = TanquesActual;
+                for(Tanques tanquesActual : tanques2) {
+                    if (tanquesActual.getPeso() <= tanquesMayorPeso.getPeso()){
+                        tanquesMayorPeso = tanquesActual;
                     }
                 }
                 System.out.println(tanquesMayorPeso.getDatosTanque());
@@ -72,12 +72,11 @@ public class Ejercito
     {
         if(numSerie>=0 && listaDeTanques.size()>0) {
             Tanques serie = listaDeTanques.get(0);
-            for(Tanques TanquesActual : listaDeTanques) {
-                if (TanquesActual.getNumSerie() == numSerie){
-                    serie = TanquesActual;
+            for(Tanques tanquesActual : listaDeTanques) {
+                if (tanquesActual.getNumSerie() == numSerie){
+                    serie = tanquesActual;
                     serie.setPeso(nuevoPeso);
                 }
-
             }
         }
 
@@ -88,16 +87,16 @@ public class Ejercito
      */
     public void eiminar( int peso)
     {
-        if(peso>=0 && listaDeTanques.size()>0) {
-            Tanques pesoMenor = listaDeTanques.get(0);
-            for(Tanques tanquesActual : listaDeTanques) {
-                if (tanquesActual.getPeso() < peso){
-                    pesoMenor = tanquesActual;
-                    listaDeTanques.remove(pesoMenor);
-                }
-
+        int cont = 0;
+        while (cont <  listaDeTanques.size()){
+            Tanques pesoMenor = listaDeTanques.get(cont);
+            if(pesoMenor.getPeso()<peso){
+                listaDeTanques.remove(cont);
+                cont--;
             }
+            cont++;
         }
+        
+    }
 
-    } 
-}
+} 
