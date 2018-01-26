@@ -44,9 +44,9 @@ public class Ejercito
     }
 
     /**
-     *
+     *ordena de menor a mayor peso
      */
-    public void imprimirTanqueMayorPeso(){
+    public void imprimirTanqueMenorPeso(){
         tanques2 = (ArrayList<Tanques>) listaDeTanques.clone();
         while(tanques2.size() != 0){
             if(tanques2.size()>0) {
@@ -59,6 +59,27 @@ public class Ejercito
                 System.out.println(tanquesMayorPeso.getDatosTanque());
                 tanques2.remove(tanquesMayorPeso);
             }
+        }
+
+    }
+    
+    
+    /**
+     *ordena de menor a mayor peso
+     */
+    public void imprimirTanquePorPais(){
+        tanques2 = (ArrayList<Tanques>) listaDeTanques.clone();
+        while(tanques2.size() != 0){
+            
+                Tanques tanquesPorPais = tanques2.get(0);
+                for(Tanques tanquesActual : tanques2) {
+                    if (tanquesActual.getPais().length() <= tanquesPorPais.getPais().length()){
+                        tanquesPorPais = tanquesActual;
+                    }
+                }
+                System.out.println(tanquesPorPais.getDatosTanque());
+                tanques2.remove(tanquesPorPais);
+            
         }
 
     }
